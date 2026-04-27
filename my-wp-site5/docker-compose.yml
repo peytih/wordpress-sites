@@ -5,7 +5,7 @@ services:
     image: wordpress:6.3-php8.2-apache
     container_name: my-wp-site5
     ports:
-      - "9010:80"    # Порт для доступа к сайту
+      - "9010:80"    
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: admin
