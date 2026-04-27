@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:6.3-php8.2-apache
+    container_name: my-wp-site5
+    ports:
+      - "9010:80"    # Порт для доступа к сайту
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./backups:/var/www/html/backups
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db5
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - mysql_data5:/var/lib/mysql
+    ports:
+      - 9002:3306
+    restart: unless-stopped
+
+volumes:
+  mysql_data5:
