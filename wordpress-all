@@ -1,0 +1,193 @@
+# NEWS
+server {
+    listen 80;
+    server_name news.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:8080;
+        
+        # КРИТИЧЕСКИ ВАЖНЫЕ заголовки для WordPress
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        
+        # Для правильных редиректов WordPress
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# BREAKTHROUGHS
+server {
+    listen 80;
+    server_name breakingnews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:8090;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# CYBERNEWS
+server {
+    listen 80;
+    server_name cybernews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# FIXNEWS
+server {
+    listen 80;
+    server_name fixnews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9010;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# TOPNEWS
+server {
+    listen 80;
+    server_name topnews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9020;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# FRESHNEWS
+server {
+    listen 80;
+    server_name freshnews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9030;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# LASTNEWS
+server {
+    listen 80;
+    server_name lastnews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9040;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# SUPERNEWS
+server {
+    listen 80;
+    server_name supernews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9050;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# ABSOLUTENEWS
+server {
+    listen 80;
+    server_name absolutenews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9060;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
+
+# WORLDNEWS
+server {
+    listen 80;
+    server_name worldnews.61kaf;
+    
+    location / {
+        proxy_pass http://localhost:9070;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+        proxy_redirect off;
+        proxy_buffering off;
+    }
+}
