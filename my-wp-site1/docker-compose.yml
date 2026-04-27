@@ -5,7 +5,7 @@ services:
     image: wordpress:6.3-php8.2-apache
     container_name: my-wp-site1
     ports:
-      - "8080:80"    # Порт для доступа к сайту
+      - "8080:80"    
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: admin
@@ -29,7 +29,7 @@ services:
     volumes:
       - mysql_data1:/var/lib/mysql
     ports:
-      - 8081:3306
+      - 8081:3306      #Доступ к базе данных по этому порту
     restart: unless-stopped
 
 volumes:
